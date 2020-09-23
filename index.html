@@ -2,6 +2,70 @@
 <html ng-app>
    <head>
       <script src="https://code.angularjs.org/1.6.0/angular.min.js"></script>
+
+      <script src="JS/scripts.js"></script>
+      <!-- Matomo -->
+<script type="text/javascript">
+document.cookie = 'zenMode=value1; SameSite=None; Secure';
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    function getPerfStats() {
+    var timing = window.performance.timing;
+    return {
+      dns: timing.domainLookupEnd - timing.domainLookupStart,
+      connect: timing.connectEnd - timing.connectStart,
+      ttfb: timing.responseStart - timing.connectEnd,
+      basePage: timing.responseEnd - timing.responseStart,
+      frontEnd: timing.loadEventStart - timing.responseEnd
+    };
+  }
+  // window.onload = function() {
+  //   if (window.performance && window.performance.timing) {
+  //     var ntStats = getPerfStats();
+  //      _paq.push(['setCustomVariable', 1, 'Network-DNS', ntStats.dns, 'page']);
+  //      _paq.push(['setCustomVariable', 2, 'Network-Connect', ntStats.connect, 'page']);
+  //      _paq.push(['setCustomVariable', 3, 'Network-TTFB', ntStats.ttfb, 'page']);
+  //      _paq.push(['setCustomVariable', 4, 'Network-BasePage', ntStats.basePage, 'page']);
+  //      _paq.push(['setCustomVariable', 5, 'Network-FrontEnd', ntStats.frontEnd, 'page']);
+  //      _paq.push(['setCustomDimension', 1, window.performance.getEntriesByType("resource")]);
+  //      _paq.push(['setCustomDimension', 2, window.performance.getEntriesByType("navigation")]);
+  //   }
+  //   console.log("DNS: " + ntStats.dns);
+  //   console.log("Network-Connect: " + ntStats.connect);
+  //   console.log("Network-TTFB: " + ntStats.ttfb);
+  //   console.log("Network-BasePage: " + ntStats.basePage);
+  //   console.log("Network-FrontEnd: " + ntStats.frontEnd);
+  //   console.log(_paq);
+  // };
+  var ntStats = getPerfStats();
+    // _paq.push(['setSecureCookie', true]);
+    var perfEntries = window.performance.getEntriesByType("navigation");
+var entry = perfEntries[0];
+var json = entry.toJSON();
+var s = JSON.stringify(json);
+_paq.push(['setCustomDimension', 3, s]);
+console.log('S: ' + s);
+    _paq.push(['setDocumentTitle', document.title]);
+    _paq.push(['setCustomVariable', 1, 'Network-DNS', ntStats.dns, 'page']);
+    _paq.push(['setCustomVariable', 2, 'Network-Connect', ntStats.connect, 'page']);
+    _paq.push(['setCustomVariable', 3, 'Network-TTFB', ntStats.ttfb, 'page']);
+    _paq.push(['setCustomVariable', 4, 'Network-BasePage', ntStats.basePage, 'page']);
+    _paq.push(['setCustomVariable', 5, 'Network-FrontEnd', ntStats.frontEnd, 'page']);
+    _paq.push(['setCustomDimension', 1, window.performance.getEntriesByType("resource")]);
+    _paq.push(['setCustomDimension', 2, window.performance.getEntriesByType("navigation")]);
+    _paq.push(['trackPageView']);
+    _paq.push(['trackAllContentImpressions']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="https://sachinhulawale.matomo.cloud/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '3']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/sachinhulawale.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+  
+    })();
+  </script>
+  <!-- End Matomo Code -->
    </head>
    
    <body>
