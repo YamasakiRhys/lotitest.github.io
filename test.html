@@ -44,11 +44,11 @@ var s = JSON.stringify(json);
 _paq.push(['setCustomDimension', 3, s]);
 console.log('S: ' + s);
     _paq.push(['setDocumentTitle', document.title]);
-    _paq.push(['setCustomVariable', 1, 'Network-DNS', ntStats.dns, 'page']);
-    _paq.push(['setCustomVariable', 2, 'Network-Connect', ntStats.connect, 'page']);
-    _paq.push(['setCustomVariable', 3, 'Network-TTFB', ntStats.ttfb, 'page']);
-    _paq.push(['setCustomVariable', 4, 'Network-BasePage', ntStats.basePage, 'page']);
-    _paq.push(['setCustomVariable', 5, 'Network-FrontEnd', ntStats.frontEnd, 'page']);
+    _paq.push(['setCustomVariable', 1, 'Network-DNS', ntStats.dns + ' ms', 'page']);
+    _paq.push(['setCustomVariable', 2, 'Network-Connect', ntStats.connect + ' ms', 'page']);
+    _paq.push(['setCustomVariable', 3, 'Network-TTFB', ntStats.ttfb + ' ms', 'page']);
+    _paq.push(['setCustomVariable', 4, 'Network-BasePage', ntStats.basePage + ' ms', 'page']);
+    _paq.push(['setCustomVariable', 5, 'Network-FrontEnd', ntStats.frontEnd + ' ms', 'page']);
     _paq.push(['setCustomDimension', 1, window.performance.getEntriesByType("resource")]);
     _paq.push(['setCustomDimension', 2, window.performance.getEntriesByType("navigation")]);
     _paq.push(['trackPageView']);
@@ -66,6 +66,12 @@ console.log('S: ' + s);
    </head>
    
    <body>
+    <div>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./test.html">Test</a></li>
+        </ul>
+    </div>
     <div>
       <label>Please test this:</label>
       <input type="text" ng-model="yourName" placeholder="Enter a name here">
