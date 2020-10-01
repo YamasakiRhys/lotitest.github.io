@@ -51,6 +51,7 @@ console.log('S: ' + s);
     _paq.push(['setCustomVariable', 5, 'Network-FrontEnd', ntStats.frontEnd + ' ms', 'page']);
     _paq.push(['setCustomDimension', 1, window.performance.getEntriesByType("resource")]);
     _paq.push(['setCustomDimension', 2, window.performance.getEntriesByType("navigation")]);
+    _paq.push(['setGenerationTimeMs', 0]);
     _paq.push(['trackPageView']);
     _paq.push(['trackAllContentImpressions']);
     _paq.push(['enableLinkTracking']);
