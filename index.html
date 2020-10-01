@@ -30,6 +30,7 @@ var json = entry.toJSON();
 var s = JSON.stringify(json);
 _paq.push(['setCustomDimension', 5, s]);
 console.log('S: ' + s);
+    _paq.push(['setSecureCookie', location.protocol === 'https:']);
     _paq.push(['setDocumentTitle', document.title]);
     _paq.push(['setCustomVariable', 1, 'Network-DNS', ntStats.dns + ' ms', 'page']);
     _paq.push(['setCustomVariable', 2, 'Network-Connect', ntStats.connect + ' ms', 'page']);
