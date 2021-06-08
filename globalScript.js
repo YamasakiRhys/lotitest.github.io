@@ -53,4 +53,4 @@ window.onload = function() {
           g.type='text/javascript'; g.async=true; g.src='//cdn.matomo.cloud/sachinhulawale.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
         })();
 
-        console.log('Matomo ID is: ' + document.currentScript.getAttribute('matomoId'));
+        console.log('Matomo ID is: ' + window.document.currentScript.getAttribute('matomoId'));
